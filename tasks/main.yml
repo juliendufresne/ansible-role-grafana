@@ -1,0 +1,28 @@
+---
+
+- name: Install for debian
+  include: install_debian.yml
+  when: ansible_distribution == 'Debian'
+
+- name: Write config
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  template:
+    src: grafana.ini.j2
+    dest: "{{ grafana_config_file }}"
+    group: "{{ grafana_group }}"
+    backup: yes
+  notify:
+    - restart grafana
+  tags:
+    - grafana
+    - config
+
+- name: start grafana service
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  service:
+    name: grafana-server
+    state: started
+  tags:
+    - grafana

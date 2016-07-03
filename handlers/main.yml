@@ -1,0 +1,8 @@
+---
+
+- name: restart grafana
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  service:
+    name: grafana-server
+    state: restarted

@@ -1,0 +1,105 @@
+---
+grafana_install_user: "root"
+grafana_config_file: "/etc/grafana/grafana.ini"
+grafana_group: "grafana"
+
+# Handle grafana.ini config file
+grafana_config__app_mode: "production" # production or development
+grafana_config__paths__data: "/var/lib/grafana"
+grafana_config__paths__logs: "/var/log/grafana"
+grafana_config__paths__plugins: "/var/lib/grafana/plugins"
+grafana_config__server__protocol: "http"
+grafana_config__server__http_addr: ""
+grafana_config__server__http_port: 3000
+grafana_config__server__domain: "localhost"
+grafana_config__server__enforce_domain: "false"
+grafana_config__server__root_url: "%(protocol)s://%(domain)s:%(http_port)s/"
+grafana_config__server__router_logging: "false"
+grafana_config__server__static_root_path: "public"
+grafana_config__server__enable_gzip: "false"
+grafana_config__server__cert_file: ""
+grafana_config__server__cert_key: ""
+grafana_config__database__type: sqlite3 # or mysql, postgres
+grafana_config__database__host: "127.0.0.1:3306" # For MySQL, Postgres
+grafana_config__database__name: grafana # For MySQL, Postgres
+grafana_config__database__user: root # For MySQL, Postgres
+grafana_config__database__password: "" # For MySQL, Postgres
+grafana_config__database__ssl_mode: disable # For Postgres: disable|require|verify-full For MySQL: true|false|skip-verify
+grafana_config__database__path: grafana.db # For sqlite3
+grafana_config__session__provider: "file" # Either "memory", "file", "redis", "mysql", "postgres"
+grafana_config__session__provider_config: "sessions"
+grafana_config__session__cookie_name: "grafana_sess"
+grafana_config__session__cookie_secure: "false"
+grafana_config__session__session_life_time: 86400
+grafana_config__analytics__reporting_enabled: "true"
+grafana_config__analytics__check_for_updates: "true"
+grafana_config__analytics__google_analytics_ua_id: ""
+grafana_config__security__admin_user: admin
+grafana_config__security__admin_password: admin
+grafana_config__security__secret_key: "SW2YcwTIb9zpOOhoPsMm"
+grafana_config__security__login_remember_days: 7
+grafana_config__security__cookie_username: "grafana_user"
+grafana_config__security__cookie_remember_name: "grafana_remember"
+grafana_config__security__disable_gravatar: "false"
+grafana_config__security__data_source_proxy_whitelist: []
+grafana_config__snapshots__external_enabled: "false"
+grafana_config__snapshots__external_snapshot_url: "https://snapshots-origin.raintank.io"
+grafana_config__snapshots__external_snapshot_name: "Publish to snapshot.raintank.io"
+grafana_config__users__allow_sign_up: "true"
+grafana_config__users__allow_org_create: "true"
+grafana_config__users__auto_assign_org: "true"
+grafana_config__users__auto_assign_org_role: "Viewer"
+grafana_config__users__login_hint: "email or username"
+grafana_config__auth__anonymous__enabled: "false"
+grafana_config__auth__anonymous__org_name: "Main Org."
+grafana_config__auth__anonymous__org_role: "Viewer"
+grafana_config__auth__github__enabled: "false"
+grafana_config__auth__github__allow_sign_up: "false"
+grafana_config__auth__github__client_id: "some_id"
+grafana_config__auth__github__client_secret: "some_secret"
+grafana_config__auth__github__scopes: "user:email,read:org"
+grafana_config__auth__github__auth_url: "https://github.com/login/oauth/authorize"
+grafana_config__auth__github__token_url: "https://github.com/login/oauth/access_token"
+grafana_config__auth__github__api_url: "https://api.github.com/user"
+grafana_config__auth__github__team_ids: ""
+grafana_config__auth__github__allowed_organizations: ""
+grafana_config__auth__google__enabled: "false"
+grafana_config__auth__google__allow_sign_up: "false"
+grafana_config__auth__google__client_id: "some_client_id"
+grafana_config__auth__google__client_secret: "some_client_secret"
+grafana_config__auth__google__scopes: "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
+grafana_config__auth__google__auth_url: "https://accounts.google.com/o/oauth2/auth"
+grafana_config__auth__google__token_url: "https://accounts.google.com/o/oauth2/token"
+grafana_config__auth__google__api_url: "https://www.googleapis.com/oauth2/v1/userinfo"
+grafana_config__auth__google__allowed_domains: ""
+grafana_config__auth__proxy__enabled: "false"
+grafana_config__auth__proxy__header_name: "X-WEBAUTH-USER"
+grafana_config__auth__proxy__header_property: "username"
+grafana_config__auth__proxy__auto_sign_up: "true"
+grafana_config__auth__basic__enabled: "true"
+grafana_config__auth__ldap__enabled: "false"
+grafana_config__auth__ldap__config_file: "/etc/grafana/ldap.toml"
+grafana_config__smtp__enabled: "false"
+grafana_config__smtp__host: "localhost:25"
+grafana_config__smtp__user: ""
+grafana_config__smtp__password: ""
+grafana_config__smtp__cert_file: ""
+grafana_config__smtp__key_file: ""
+grafana_config__smtp__skip_verify: "false"
+grafana_config__smtp__from_address: "admin@grafana.localhost"
+grafana_config__emails__welcome_email_on_sign_up: "false"
+grafana_config__log__mode: "console, file"
+grafana_config__log__buffer_len: 10000
+grafana_config__log__level: "Info"
+grafana_config__log__console__level: ""
+grafana_config__log__file__level: ""
+grafana_config__log__file__log_rotate: "true"
+grafana_config__log__file__max_lines: 1000000
+grafana_config__log__file__max_lines_shift: 28
+grafana_config__log__file__daily_rotate: "true"
+grafana_config__log__file__max_days: 7
+grafana_config__event_publisher__enabled: "false"
+grafana_config__event_publisher__rabbitmq_url: "amqp://localhost/"
+grafana_config__event_publisher__exchange: "grafana_events"
+grafana_config__dashboards__json__enabled: "false"
+grafana_config__dashboards__json__path: "/var/lib/grafana/dashboards"
