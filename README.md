@@ -1,5 +1,5 @@
-Grafana
-=======
+Ansible Role Grafana
+====================
 
 Fully configurable [Grafana](http://grafana.org/) installation for Linux Debian.
 
