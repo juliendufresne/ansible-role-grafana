@@ -1,6 +1,8 @@
 Ansible Role Grafana
 ====================
 
+[![Build Status](https://travis-ci.org/juliendufresne/ansible-role-grafana.svg?branch=master)](https://travis-ci.org/juliendufresne/ansible-role-grafana)
+
 Fully configurable [Grafana](http://grafana.org/) installation for Debian/Ubuntu Linux.
 
 Requirements
