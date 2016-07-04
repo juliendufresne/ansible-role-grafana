@@ -1,7 +1,7 @@
 Ansible Role Grafana
 ====================
 
-Fully configurable [Grafana](http://grafana.org/) installation for Linux Debian.
+Fully configurable [Grafana](http://grafana.org/) installation for Debian/Ubuntu Linux.
 
 Requirements
 ------------

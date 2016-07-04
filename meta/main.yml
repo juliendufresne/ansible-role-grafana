@@ -1,6 +1,6 @@
 galaxy_info:
   author: Julien Dufresne
-  description: Fully configurable Grafana installation for Linux Debian
+  description: Fully configurable Grafana installation for Debian/Ubuntu Linux.
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -113,22 +113,22 @@ galaxy_info:
   #  - 9.1
   #  - 9.2
   #  - 9.3
-  #- name: Ubuntu
-  #  versions:
+  - name: Ubuntu
+    versions:
   #  - all
   #  - lucid
   #  - maverick
   #  - natty
   #  - oneiric
-  #  - precise
+    - precise
   #  - quantal
   #  - raring
   #  - saucy
-  #  - trusty
+    - trusty
   #  - utopic
   #  - vivid
-  #  - wily
-  #  - xenial
+    - wily
+    - xenial
   #- name: SLES
   #  versions:
   #  - all
