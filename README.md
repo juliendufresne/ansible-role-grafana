@@ -35,9 +35,10 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD, MIT
+MIT / BSD
 
 Author Information
 ------------------
 
-None for now.
+This role was created in 2016 by [Julien Dufresne](http://www.juliendufresne.fr).
+
