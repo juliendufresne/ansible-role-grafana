@@ -1,0 +1,40 @@
+---
+
+- name: Install libselinux-python.
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  yum:
+    name: libselinux-python
+    state: installed
+  tags:
+    - grafana
+    - packages
+
+- name: Add Grafana repository.
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  yum_repository:
+    state: present
+    description: Grafana
+    name: grafana
+    baseurl: https://packagecloud.io/grafana/stable/el/6/$basearch
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+    sslverify: yes
+    sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+  tags:
+    - grafana
+    - packages
+
+- name: Install Grafana.
+  become: true
+  become_user: "{{ grafana_install_user }}"
+  yum:
+    name: grafana
+    state: installed
+  notify:
+    - restart grafana
+  tags:
+    - grafana
+    - packages
